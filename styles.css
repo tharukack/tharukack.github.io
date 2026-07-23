@@ -114,6 +114,112 @@ button { font: inherit; }
 .intro-copy em { color: var(--lime); font-style: normal; }
 .intro-small { max-width: 650px; margin: 56px 0 0 auto; color: var(--muted); font-size: 17px; }
 
+.experience {
+  width: var(--page);
+  margin: 0 auto;
+  padding: 140px 0;
+  border-top: 1px solid var(--border);
+}
+.experience-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 74px;
+}
+.experience-head h2 {
+  margin: 20px 0 0;
+  font: 600 clamp(76px, 10vw, 140px)/.82 var(--display);
+  letter-spacing: -.05em;
+}
+.experience-head > p {
+  width: 370px;
+  margin: 0 0 5px;
+  color: var(--muted);
+}
+.experience-list {
+  border-top: 1px solid var(--border);
+}
+.experience-item {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 70px;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+}
+.experience-meta {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.experience-index {
+  color: var(--lime);
+  font: 400 10px/1.5 var(--mono);
+}
+.experience-meta p,
+.company {
+  margin: 0;
+  color: var(--muted);
+  font: 400 10px/1.5 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.experience-role h3 {
+  margin: 14px 0 20px;
+  font: 500 clamp(42px, 5vw, 64px)/1 var(--display);
+  text-transform: uppercase;
+}
+.experience-role > p:not(.company) {
+  max-width: 790px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+.experience-role ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.experience-role li {
+  padding: 10px 13px;
+  color: var(--mint);
+  border: 1px solid rgba(115,242,195,.24);
+  border-radius: 100px;
+  font: 400 9px/1.2 var(--mono);
+}
+.experience-role li strong {
+  color: var(--lime);
+  font-weight: 500;
+}
+.education-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: end;
+  margin-top: 70px;
+  padding: 38px;
+  color: var(--black);
+  background: var(--lime);
+}
+.education-card .kicker {
+  color: rgba(12,14,13,.55);
+}
+.education-card h3 {
+  margin: 14px 0 0;
+  font: 500 38px/1.08 var(--display);
+  text-transform: uppercase;
+}
+.education-card > div:last-child p {
+  margin: 0 0 7px;
+  font-weight: 700;
+}
+.education-card > div:last-child span {
+  color: rgba(12,14,13,.63);
+  font-size: 13px;
+}
+
 .projects { padding: 140px max(40px, calc((100vw - 1240px) / 2)); background: var(--white); color: var(--black); }
 .projects-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 70px; }
 .projects-head h2 { margin: 20px 0 0; font: 600 clamp(80px, 11vw, 150px)/.8 var(--display); letter-spacing: -.05em; }
@@ -187,8 +293,14 @@ button { font: inherit; }
 .contact h2 { margin: 40px 0 0; font: 600 clamp(80px, 12vw, 165px)/.83 var(--display); letter-spacing: -.05em; }
 .contact h2 span { color: transparent; -webkit-text-stroke: 2px var(--black); }
 .contact-copy { max-width: 470px; margin: 60px 0 0; font-size: 18px; }
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  margin-top: 50px;
+}
 .contact-button {
-  display: flex; align-items: center; justify-content: space-between; margin-top: 50px;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 23px 0; border-top: 1px solid rgba(12,14,13,.3); border-bottom: 1px solid rgba(12,14,13,.3);
   font-weight: 600;
 }
@@ -213,6 +325,7 @@ button { font: inherit; }
   .hero h1 { font-size: clamp(100px, 17vw, 150px); }
   .portrait img { width: 125px; height: 125px; }
   .intro, .capabilities { grid-template-columns: 180px 1fr; gap: 35px; }
+  .experience-item { grid-template-columns: 180px 1fr; gap: 35px; }
   .project-featured { column-gap: 20px; }
 }
 
@@ -248,6 +361,15 @@ button { font: inherit; }
   .intro, .capabilities { grid-template-columns: 1fr; gap: 55px; padding: 95px 0; }
   .intro-copy > p:first-child { font-size: 42px; }
   .intro-small { margin-top: 40px; }
+  .experience { padding: 95px 0; }
+  .experience-head { display: block; margin-bottom: 50px; }
+  .experience-head h2 { font-size: 70px; }
+  .experience-head > p { width: auto; margin-top: 35px; }
+  .experience-item { grid-template-columns: 1fr; gap: 35px; padding: 45px 0; }
+  .experience-role h3 { font-size: 42px; }
+  .experience-role > p:not(.company) { font-size: 15px; }
+  .education-card { grid-template-columns: 1fr; gap: 35px; padding: 27px; }
+  .education-card h3 { font-size: 31px; }
   .projects { padding: 95px 18px; }
   .projects-head { display: block; }
   .projects-head h2 { font-size: 82px; }
@@ -267,6 +389,7 @@ button { font: inherit; }
   .capability-list p { margin-top: 10px; }
   .contact { padding: 95px 18px; }
   .contact h2 { font-size: 77px; }
+  .contact-actions { grid-template-columns: 1fr; gap: 0; }
   .footer { min-height: 210px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 25px; }
 }
 
