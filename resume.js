@@ -1,6 +1,6 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
-const themeLabel = document.querySelector(".theme-label");
+const resumeThemeIcon = document.querySelector(".resume-theme-icon");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const layoutToggle = document.querySelector(".layout-toggle");
 
@@ -12,7 +12,7 @@ function applyTheme(theme) {
     "aria-label",
     dark ? "Switch to light theme" : "Switch to dark theme",
   );
-  if (themeLabel) themeLabel.textContent = dark ? "Light" : "Dark";
+  if (resumeThemeIcon) resumeThemeIcon.textContent = dark ? "☀" : "☾";
   if (themeColor) themeColor.content = dark ? "#0c0e0d" : "#e7e5dc";
 }
 
