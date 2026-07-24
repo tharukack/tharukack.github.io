@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e7e5dc" />
+    <meta
+      name="description"
+      content="Résumé of Tharuka Chathura — cross-platform mobile and AI systems engineer."
+    />
+    <link rel="icon" type="image/png" sizes="256x256" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Résumé — Tharuka Chathura</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("resume-theme") || "light";
+        document.documentElement.dataset.layout =
+          localStorage.getItem("resume-layout") || "modern";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.dataset.layout = "modern";
+      }
+    </script>
+    <link rel="stylesheet" href="resume.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#resume-content">Skip to résumé</a>
+
+    <header class="resume-toolbar">
+      <a class="back-link" href="index.html">
+        <span aria-hidden="true">←</span> Portfolio
+      </a>
+      <p>Tharuka Chathura · Résumé</p>
+      <div class="toolbar-actions">
+        <button
+          class="layout-toggle"
+          type="button"
+          aria-label="Switch to classic résumé layout"
+          aria-pressed="false"
+          title="Switch résumé layout"
+        >
+          <span aria-hidden="true">CV</span>
+        </button>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+        >
+          <span class="theme-dot" aria-hidden="true"></span>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button class="print-button" type="button" onclick="window.print()">
+          Print / Save PDF <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="resume-shell" id="resume-content">
+      <header class="resume-hero">
+        <div class="resume-monogram" aria-hidden="true">TC</div>
+        <div class="hero-copy">
+          <p class="eyebrow">Software engineer · Sydney, Australia</p>
+          <h1>THARUKA<br /><span>CHATHURA</span></h1>
+          <p class="role">
+            Cross-platform mobile applications <i>+</i> AI-powered systems
+          </p>
+        </div>
+        <nav class="contact-list" aria-label="Contact links">
+          <a href="mailto:tharukack@gmail.com">
+            <span>Email</span>
+            tharukack@gmail.com ↗
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tharuka-chathura/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>LinkedIn</span>
+            /in/tharuka-chathura ↗
+          </a>
+          <a
+            href="https://github.com/tharukack"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>GitHub</span>
+            @tharukack ↗
+          </a>
+        </nav>
+      </header>
+
+      <section class="summary section">
+        <div class="section-heading">
+          <span>01</span>
+          <h2>Profile</h2>
+        </div>
+        <div class="section-body summary-grid">
+          <p class="summary-lead">
+            Software Engineer specialising in cross-platform mobile applications
+            and <em>AI-powered systems.</em>
+          </p>
+          <p>
+            Experienced in building scalable healthcare platforms, real-time
+            conversational AI pipelines, and intelligent mobile applications
+            using Kotlin Multiplatform, Android, iOS, RAG, local LLMs, and
+            cloud-native architectures.
+          </p>
+        </div>
+      </section>
+
+      <section class="skills section">
+        <div class="section-heading">
+          <span>02</span>
+          <h2>Skills</h2>
+        </div>
+        <div class="section-body skill-groups">
+          <article>
+            <h3>Languages</h3>
+            <p>Kotlin · Swift · Java · Python · TypeScript · JavaScript · C++ · SQL · Dart</p>
+          </article>
+          <article>
+            <h3>Mobile</h3>
+            <p>
+              Kotlin Multiplatform · Jetpack Compose · Android SDK · SwiftUI ·
+              Dagger Hilt · Koin · Flow · Coroutines · Retrofit · Room ·
+              WorkManager · Biometrics · Android MDM/EMM · Material Design ·
+              Appium · Espresso · TestNG · Cucumber · Flutter
+            </p>
+          </article>
+          <article>
+            <h3>AI systems</h3>
+            <p>
+              RAG · ONNX · Local LLMs · AI Agents · FAISS · Vector Databases ·
+              Model fine-tuning · Custom inference pipelines · Quantisation ·
+              ASR · STT · TTS
+            </p>
+          </article>
+          <article>
+            <h3>Backend & web</h3>
+            <p>
+              Spring Boot · NestJS · PostgreSQL · Redis · Docker Compose ·
+              Hibernate · Angular · React · Next.js · JavaFX · JSP · RxJS ·
+              Selenium · AWS · Firebase Crashlytics · Git
+            </p>
+          </article>
+          <article>
+            <h3>Protocols</h3>
+            <p>REST · APDU · HTTP · WebSocket · MQTT · UART · SPI · I2C · CAN · EMV</p>
+          </article>
+          <article>
+            <h3>Embedded</h3>
+            <p>Arduino · STM32 · NodeMCU · ESP32</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience section">
+        <div class="section-heading">
+          <span>03</span>
+          <h2>Experience</h2>
+        </div>
+        <div class="section-body timeline">
+          <article class="job">
+            <div class="job-meta">
+              <p class="date">Mar 2025 — Present</p>
+              <p class="place">NSW, Australia</p>
+            </div>
+            <div class="job-content">
+              <p class="company">HeartBug</p>
+              <h3>Full Stack Engineer</h3>
+              <ul>
+                <li>
+                  Developed cross-platform healthcare applications using Kotlin
+                  Multiplatform, Jetpack Compose, and SwiftUI interoperability,
+                  applying Clean Architecture, MVVM, and Koin to support more
+                  than 3,000 patients across Android and iOS.
+                </li>
+                <li>
+                  Designed the “Bugsy” AI healthcare voice assistant backend
+                  using Docker Compose, PostgreSQL, Redis, FAISS-based RAG, ASR
+                  models, OpenAI APIs, and WebSockets, with an architecture
+                  planned to support more than 10,000 patients.
+                </li>
+                <li>
+                  Developed a real-time mobile voice client with audio streaming,
+                  voice activity detection, echo cancellation, TTS, and optimised
+                  low-latency pipelines.
+                </li>
+                <li>
+                  Architected BLE and offline-first synchronisation with robust
+                  reconnection and background processing, reducing reconnection
+                  failures by 90% and improving sync reliability by 80% in
+                  internal testing and staging.
+                </li>
+                <li>
+                  Fine-tuned MobileBERT and DeBERTa models with Hugging Face for
+                  intent classification exceeding 90% recognition accuracy, and
+                  implemented local-LLM action handling and conversational AI
+                  workflows.
+                </li>
+                <li>
+                  Implemented cross-platform permission handling, lifecycle
+                  management, push notifications, biometrics, analytics, and
+                  background execution strategies.
+                </li>
+                <li>
+                  Maintained production mobile applications for 3,000+ active
+                  users, using Crashlytics and production diagnostics to reduce
+                  application crash rates from 20% to 1%.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <p class="date">Jul 2022 — Dec 2024</p>
+              <p class="place">Sweden</p>
+            </div>
+            <div class="job-content">
+              <p class="company">Qmatic</p>
+              <h3>Software Engineer</h3>
+              <ul>
+                <li>
+                  Applied Clean Architecture, SOLID, multi-module design, MVVM,
+                  reactive programming, and Dagger Hilt to the Android kiosk
+                  application.
+                </li>
+                <li>
+                  Built automatic error detection and recovery for connection,
+                  server, and printer failures, reducing downtime by 90% and
+                  configurator workload by 70%.
+                </li>
+                <li>
+                  Implemented QR provisioning and standalone device management
+                  to enable kiosk mode for more than 10,000 Android devices.
+                </li>
+                <li>
+                  Engineered an automated Kotlin testing framework using
+                  Cucumber BDD, JUnit, TestNG, and Appium, reducing QA workload
+                  by 80%.
+                </li>
+                <li>
+                  Integrated printers, assist buttons, and multi-format card
+                  readers supporting contact, contactless, and MSR flows.
+                </li>
+                <li>
+                  Designed and developed 90% of a modern Android UI while
+                  migrating legacy XML screens to Jetpack Compose.
+                </li>
+                <li>
+                  Automated CI/CD packaging and deployment to AWS servers with
+                  reliable release scripts.
+                </li>
+                <li>
+                  Worked within Agile delivery using Git, JIRA, sprint planning,
+                  and scrum practices.
+                </li>
+                <li>
+                  Delivered maintainable Angular staff-application features
+                  using RxJS, routing, dependency injection, and reactive forms.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <p class="date">Feb 2020 — Jan 2022</p>
+              <p class="place">Part-time · Global</p>
+            </div>
+            <div class="job-content">
+              <p class="company">Fiverr</p>
+              <h3>Freelance Software Developer</h3>
+              <ul>
+                <li>
+                  Delivered 100+ custom software solutions for more than 100
+                  global clients using Java, C++, Python, and JavaScript.
+                </li>
+                <li>
+                  Created 20+ IoT solutions and electronic prototypes using
+                  Arduino, ESP32, NodeMCU, and STM32 microcontrollers.
+                </li>
+                <li>
+                  Developed 30+ web automation scripts and crawlers with Python,
+                  Java, and Selenium, reducing manual effort by more than 80%.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <p class="date">Feb 2020 — Jul 2020</p>
+              <p class="place">Sri Lanka</p>
+            </div>
+            <div class="job-content">
+              <p class="company">Bloomwire</p>
+              <h3>Back-end Developer</h3>
+              <ul>
+                <li>
+                  Established backend services for the Unecast SMS solution
+                  using Spring Boot, REST APIs, AWS EC2, Lambda, RDS, JWT, SQL,
+                  and Hibernate transaction management.
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="education section">
+        <div class="section-heading">
+          <span>04</span>
+          <h2>Education</h2>
+        </div>
+        <div class="section-body education-grid">
+          <article class="education-primary">
+            <p class="date">Aug 2017 — Jul 2022</p>
+            <h3>BS Honours in Engineering</h3>
+            <p>University of Moratuwa · Sri Lanka</p>
+            <span>Electrical Engineering · Second Class, Upper Division</span>
+          </article>
+          <div class="course-list">
+            <article>
+              <p class="date">Oct 2020 — Apr 2020</p>
+              <h3>Advanced Business Solution Developer</h3>
+              <p>IJSE · Sri Lanka</p>
+              <span>
+                Socket Programming, Web Applications, ORM, Hibernate, REST,
+                SPAs, and Document-Oriented Database Management.
+              </span>
+            </article>
+            <article>
+              <p class="date">Feb 2019 — Sep 2019</p>
+              <h3>Comprehensive Master Java Developer</h3>
+              <p>IJSE · Sri Lanka</p>
+              <span>
+                OOP, DBMS, Data Structures and Algorithms, Application
+                Architecture, Design Patterns, Threads, and Java Modern UI.
+              </span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-projects section">
+        <div class="section-heading">
+          <span>05</span>
+          <h2>Projects</h2>
+        </div>
+        <div class="section-body project-list">
+          <article>
+            <span>01</span>
+            <h3>Sadaham Sewana Charity Order Management System</h3>
+            <p>
+              Full-stack order and campaign management for coordinating customer
+              orders and charity lunch packet distribution. Built with NestJS,
+              Prisma, PostgreSQL, and Next.js, with JWT authentication, Twilio
+              SMS, rate limiting, Google Drive backups, and Docker deployment.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Portable Anti-Collision System for Forklifts</h3>
+            <p>
+              Forklift safety system using ESP32, time-of-flight sensors, and
+              AWS IoT Core for collision prevention, with real-time safety
+              monitoring through a React dashboard.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Virtual Career Fair Platform</h3>
+            <p>
+              Automated scheduling and interview coordination platform
+              integrating Google Calendar and Google Meet APIs to streamline
+              recruiter-candidate meeting workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="resume-footer">
+        <div class="resume-monogram" aria-hidden="true">TC</div>
+        <p>Tharuka Chathura · Software Engineer</p>
+        <a href="index.html">Return to portfolio ↑</a>
+      </footer>
+    </main>
+    <script src="resume.js"></script>
+  </body>
+</html>

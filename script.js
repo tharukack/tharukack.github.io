@@ -1,8 +1,36 @@
 const menu = document.querySelector(".menu");
 const mobileNav = document.querySelector(".mobile-nav");
 const pointerLight = document.querySelector(".pointer-light");
+const siteThemeToggle = document.querySelector(".site-theme-toggle");
+const siteThemeIcon = document.querySelector(".site-theme-icon");
+const siteThemeColor = document.querySelector('meta[name="theme-color"]');
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+function applySiteTheme(theme) {
+  const dark = theme === "dark";
+  document.documentElement.dataset.theme = theme;
+  siteThemeToggle?.setAttribute("aria-pressed", String(dark));
+  siteThemeToggle?.setAttribute(
+    "aria-label",
+    dark ? "Switch to light theme" : "Switch to dark theme",
+  );
+  if (siteThemeIcon) siteThemeIcon.textContent = dark ? "☀" : "☾";
+  if (siteThemeColor) siteThemeColor.content = dark ? "#0c0e0d" : "#f7f5ed";
+}
+
+applySiteTheme(document.documentElement.dataset.theme || "dark");
+
+siteThemeToggle?.addEventListener("click", () => {
+  const nextTheme =
+    document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  try {
+    localStorage.setItem("portfolio-theme", nextTheme);
+  } catch {
+    // The theme still changes when storage is unavailable.
+  }
+  applySiteTheme(nextTheme);
+});
 
 menu?.addEventListener("click", () => {
   const open = menu.getAttribute("aria-expanded") === "true";
