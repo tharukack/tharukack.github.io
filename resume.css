@@ -131,10 +131,46 @@ button { font: inherit; }
   font: 500 9px/1 var(--mono);
   letter-spacing: .02em;
 }
+html[data-layout="modern"] .layout-toggle {
+  animation: cv-gentle-pulse 5.5s ease-out 1.2s infinite;
+}
+html[data-layout="modern"] .layout-toggle:hover,
+html[data-layout="modern"] .layout-toggle:focus-visible {
+  animation: none;
+}
 .layout-toggle[aria-pressed="true"] {
   color: var(--accent-text);
   border-color: var(--lime);
   background: var(--lime);
+}
+@keyframes cv-gentle-pulse {
+  0%,
+  72%,
+  100% {
+    color: var(--paper);
+    border-color: var(--line);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  78% {
+    color: var(--lime);
+    border-color: var(--lime);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--lime) 28%, transparent);
+  }
+  86% {
+    color: var(--lime);
+    border-color: var(--lime);
+    box-shadow: 0 0 0 6px transparent;
+  }
+  92% {
+    color: var(--lime);
+    border-color: var(--lime);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--lime) 20%, transparent);
+  }
+  98% {
+    color: var(--paper);
+    border-color: var(--line);
+    box-shadow: 0 0 0 5px transparent;
+  }
 }
 .resume-theme-icon {
   font-size: 17px;
@@ -868,4 +904,10 @@ html[data-layout="classic"] .resume-footer {
   .project-list article { min-height: 0; padding: 6mm; border-color: #bbb; break-inside: avoid; }
   .project-list h3 { margin-top: 8mm; font-size: 15pt; }
   .resume-footer { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-layout="modern"] .layout-toggle {
+    animation: none;
+  }
 }
