@@ -132,7 +132,11 @@ button { font: inherit; }
   letter-spacing: .02em;
 }
 html[data-layout="modern"] .layout-toggle {
-  animation: cv-gentle-pulse 5.5s ease-out 1.2s infinite;
+  width: 44px;
+  height: 44px;
+  color: var(--mint);
+  border-color: color-mix(in srgb, var(--mint) 52%, var(--line));
+  animation: cv-gentle-pulse 3.8s ease-out .8s infinite;
 }
 html[data-layout="modern"] .layout-toggle:hover,
 html[data-layout="modern"] .layout-toggle:focus-visible {
@@ -145,31 +149,36 @@ html[data-layout="modern"] .layout-toggle:focus-visible {
 }
 @keyframes cv-gentle-pulse {
   0%,
-  72%,
+  58%,
   100% {
-    color: var(--paper);
-    border-color: var(--line);
+    color: var(--mint);
+    border-color: color-mix(in srgb, var(--mint) 52%, var(--line));
+    background: transparent;
     box-shadow: 0 0 0 0 transparent;
   }
-  78% {
-    color: var(--lime);
-    border-color: var(--lime);
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--lime) 28%, transparent);
+  66% {
+    color: var(--mint);
+    border-color: var(--mint);
+    background: color-mix(in srgb, var(--mint) 10%, transparent);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--mint) 42%, transparent);
   }
-  86% {
-    color: var(--lime);
-    border-color: var(--lime);
-    box-shadow: 0 0 0 6px transparent;
+  75% {
+    color: var(--mint);
+    border-color: var(--mint);
+    background: transparent;
+    box-shadow: 0 0 0 7px transparent;
+  }
+  82% {
+    color: var(--mint);
+    border-color: var(--mint);
+    background: color-mix(in srgb, var(--mint) 8%, transparent);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--mint) 32%, transparent);
   }
   92% {
-    color: var(--lime);
-    border-color: var(--lime);
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--lime) 20%, transparent);
-  }
-  98% {
-    color: var(--paper);
-    border-color: var(--line);
-    box-shadow: 0 0 0 5px transparent;
+    color: var(--mint);
+    border-color: var(--mint);
+    background: transparent;
+    box-shadow: 0 0 0 6px transparent;
   }
 }
 .resume-theme-icon {
@@ -187,42 +196,21 @@ html[data-layout="modern"] .layout-toggle:focus-visible {
 .back-link { display: flex; gap: 10px; align-items: center; }
 
 .pdf-viewer {
+  position: relative;
   width: min(940px, calc(100vw - 48px));
   display: none;
-  margin: 48px auto 80px;
+  margin: 40px auto 80px;
+  padding-top: 16px;
 }
-.pdf-viewer-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 28px;
-  margin-bottom: 22px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-.pdf-viewer-heading p {
-  margin: 0;
-  color: var(--mint);
-  font: 400 9px/1 var(--mono);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-.pdf-viewer-heading h2 {
-  margin: 10px 0 0;
-  font: 500 34px/1 var(--display);
-  text-transform: uppercase;
-}
-.pdf-viewer-heading > a {
-  padding: 12px 16px;
-  color: var(--accent-text);
-  border-radius: 999px;
-  background: var(--lime);
-  font: 500 9px/1 var(--mono);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.pdf-viewer-heading > a span {
-  margin-left: 7px;
+.pdf-viewer::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(180px, 36%);
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, var(--mint), var(--lime));
+  box-shadow: 12px 0 24px color-mix(in srgb, var(--mint) 24%, transparent);
 }
 .pdf-document {
   display: grid;
@@ -518,7 +506,7 @@ html[data-layout="pdf"] .pdf-viewer {
 }
 .resume-footer p { color: var(--muted); }
 
-/* Plain ATS-friendly résumé view */
+/* Legacy classic résumé styles */
 html[data-layout="classic"] .resume-shell {
   --ink: #fff;
   --paper: #111;
@@ -774,6 +762,10 @@ html[data-layout="classic"] .resume-footer {
     width: 38px;
     height: 38px;
   }
+  html[data-layout="modern"] .layout-toggle {
+    width: 42px;
+    height: 42px;
+  }
   .download-button {
     width: 38px;
     height: 38px;
@@ -781,14 +773,6 @@ html[data-layout="classic"] .resume-footer {
   .pdf-viewer {
     width: calc(100vw - 28px);
     margin: 28px auto 48px;
-  }
-  .pdf-viewer-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .pdf-viewer-heading h2 {
-    font-size: 28px;
   }
   .pdf-document {
     gap: 22px;
