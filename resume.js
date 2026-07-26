@@ -19,18 +19,16 @@ function applyTheme(theme) {
 applyTheme(root.dataset.theme || "light");
 
 function applyLayout(layout) {
-  const classic = layout === "classic";
-  root.dataset.layout = layout;
-  layoutToggle?.setAttribute("aria-pressed", String(classic));
+  const pdf = layout === "pdf" || layout === "classic";
+  root.dataset.layout = pdf ? "pdf" : "modern";
+  layoutToggle?.setAttribute("aria-pressed", String(pdf));
   layoutToggle?.setAttribute(
     "aria-label",
-    classic
-      ? "Switch to modern résumé layout"
-      : "Switch to classic résumé layout",
+    pdf ? "View modern résumé" : "View PDF résumé",
   );
   layoutToggle?.setAttribute(
     "title",
-    classic ? "Use modern layout" : "Use classic résumé layout",
+    pdf ? "View modern résumé" : "View PDF résumé",
   );
 }
 
@@ -47,7 +45,7 @@ themeToggle?.addEventListener("click", () => {
 });
 
 layoutToggle?.addEventListener("click", () => {
-  const nextLayout = root.dataset.layout === "classic" ? "modern" : "classic";
+  const nextLayout = root.dataset.layout === "pdf" ? "modern" : "pdf";
   try {
     localStorage.setItem("resume-layout", nextLayout);
   } catch {

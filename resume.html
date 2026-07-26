@@ -21,8 +21,9 @@
       try {
         document.documentElement.dataset.theme =
           localStorage.getItem("resume-theme") || "light";
+        const savedLayout = localStorage.getItem("resume-layout");
         document.documentElement.dataset.layout =
-          localStorage.getItem("resume-layout") || "modern";
+          savedLayout === "classic" ? "pdf" : savedLayout || "modern";
       } catch {
         document.documentElement.dataset.theme = "light";
         document.documentElement.dataset.layout = "modern";
@@ -42,9 +43,9 @@
         <button
           class="layout-toggle"
           type="button"
-          aria-label="Switch to classic résumé layout"
+          aria-label="View PDF résumé"
           aria-pressed="false"
-          title="Switch résumé layout"
+          title="View PDF résumé"
         >
           <span aria-hidden="true">CV</span>
         </button>
@@ -69,7 +70,8 @@
       </div>
     </header>
 
-    <main class="resume-shell" id="resume-content">
+    <div class="resume-views" id="resume-content">
+    <main class="resume-shell" id="modern-resume">
       <header class="resume-hero">
         <div class="resume-monogram" aria-hidden="true">TC</div>
         <div class="hero-copy">
@@ -401,6 +403,21 @@
         <a href="index.html">Return to portfolio ↑</a>
       </footer>
     </main>
+
+    <section class="pdf-viewer" aria-label="PDF résumé viewer">
+      <iframe
+        src="assets/Tharuka-Chathura-Resume.pdf#view=FitH"
+        title="Tharuka Chathura ATS résumé PDF"
+      ></iframe>
+      <p class="pdf-fallback">
+        If the PDF does not appear,
+        <a
+          href="assets/Tharuka-Chathura-Resume.pdf"
+          download="Tharuka-Chathura-Resume.pdf"
+        >download the résumé</a>.
+      </p>
+    </section>
+    </div>
     <script src="resume.js"></script>
   </body>
 </html>
