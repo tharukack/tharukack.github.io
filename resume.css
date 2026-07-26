@@ -151,36 +151,77 @@ button { font: inherit; }
 .back-link { display: flex; gap: 10px; align-items: center; }
 
 .pdf-viewer {
-  width: min(1180px, calc(100vw - 48px));
-  height: calc(100svh - 108px);
-  min-height: 680px;
+  width: min(940px, calc(100vw - 48px));
   display: none;
-  flex-direction: column;
-  margin: 24px auto 32px;
-  overflow: hidden;
+  margin: 48px auto 80px;
+}
+.pdf-viewer-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.pdf-viewer-heading p {
+  margin: 0;
+  color: var(--mint);
+  font: 400 9px/1 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.pdf-viewer-heading h2 {
+  margin: 10px 0 0;
+  font: 500 34px/1 var(--display);
+  text-transform: uppercase;
+}
+.pdf-viewer-heading > a {
+  padding: 12px 16px;
+  color: var(--accent-text);
+  border-radius: 999px;
+  background: var(--lime);
+  font: 500 9px/1 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.pdf-viewer-heading > a span {
+  margin-left: 7px;
+}
+.pdf-document {
+  display: grid;
+  gap: 32px;
+}
+.pdf-page {
+  margin: 0;
+}
+.pdf-page img {
+  display: block;
+  width: 100%;
+  height: auto;
   border: 1px solid var(--line);
   background: #fff;
-  box-shadow: 0 45px 100px var(--shadow);
+  box-shadow: 0 28px 70px var(--shadow);
 }
-.pdf-viewer iframe {
-  width: 100%;
-  flex: 1;
-  border: 0;
-  background: #fff;
+.pdf-page figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font: 400 8px/1 var(--mono);
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
 }
-.pdf-fallback {
-  margin: 0;
-  padding: 10px 16px;
-  color: #4c504d;
-  border-top: 1px solid #d7d9d7;
-  background: #f5f5f3;
-  font: 400 10px/1.5 var(--mono);
+.pdf-loading,
+.pdf-error {
+  margin: 80px 0;
+  color: var(--muted);
+  font: 400 11px/1.6 var(--mono);
   text-align: center;
 }
-.pdf-fallback a {
-  color: #12664e;
+.pdf-error a {
+  color: var(--mint);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 html[data-layout="pdf"] .resume-shell {
   display: none;
@@ -702,13 +743,22 @@ html[data-layout="classic"] .resume-footer {
     height: 38px;
   }
   .pdf-viewer {
-    width: 100%;
-    height: calc(100svh - 76px);
-    min-height: 560px;
-    margin: 0;
-    border-right: 0;
-    border-bottom: 0;
-    border-left: 0;
+    width: calc(100vw - 28px);
+    margin: 28px auto 48px;
+  }
+  .pdf-viewer-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .pdf-viewer-heading h2 {
+    font-size: 28px;
+  }
+  .pdf-document {
+    gap: 22px;
+  }
+  .pdf-page img {
+    box-shadow: 0 18px 42px var(--shadow);
   }
   .resume-shell { width: 100%; margin: 24px 0 0; border-right: 0; border-left: 0; }
   .resume-hero { min-height: 620px; padding: 82px 22px 44px; }

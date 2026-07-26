@@ -29,6 +29,12 @@ jobs:
           root_file: Tharuka-Chathura-Resume.tex
           working_directory: resume-source
 
+      - name: Install PDF renderer
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes poppler-utils
+
       - name: Assemble GitHub Pages site
         shell: bash
         run: |
@@ -42,6 +48,14 @@ jobs:
           mkdir -p _site/assets
           cp resume-source/Tharuka-Chathura-Resume.pdf \
             _site/assets/Tharuka-Chathura-Resume.pdf
+
+          mkdir -p _site/assets/resume-pages
+          pdftoppm -png -r 160 \
+            resume-source/Tharuka-Chathura-Resume.pdf \
+            _site/assets/resume-pages/page
+          python3 -c 'import glob,json,re; pages=glob.glob("_site/assets/resume-pages/page-*.png"); pages.sort(key=lambda path: int(re.search(r"page-(\d+)\.png$", path).group(1))); print(json.dumps([path.removeprefix("_site/") for path in pages]))' \
+            > _site/assets/resume-pages/pages.json
+
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages

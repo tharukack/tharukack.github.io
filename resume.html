@@ -404,18 +404,25 @@
       </footer>
     </main>
 
-    <section class="pdf-viewer" aria-label="PDF résumé viewer">
-      <iframe
-        src="assets/Tharuka-Chathura-Resume.pdf#view=FitH"
-        title="Tharuka Chathura ATS résumé PDF"
-      ></iframe>
-      <p class="pdf-fallback">
-        If the PDF does not appear,
+    <section class="pdf-viewer" aria-labelledby="pdf-viewer-title">
+      <header class="pdf-viewer-heading">
+        <div>
+          <p>ATS-friendly document</p>
+          <h2 id="pdf-viewer-title">Professional résumé</h2>
+        </div>
         <a
           href="assets/Tharuka-Chathura-Resume.pdf"
           download="Tharuka-Chathura-Resume.pdf"
-        >download the résumé</a>.
-      </p>
+        >Download PDF <span aria-hidden="true">↓</span></a>
+      </header>
+      <div
+        class="pdf-document"
+        id="pdf-document"
+        data-manifest="assets/resume-pages/pages.json"
+        aria-live="polite"
+      >
+        <p class="pdf-loading">Preparing résumé pages…</p>
+      </div>
     </section>
     </div>
     <script src="resume.js"></script>
