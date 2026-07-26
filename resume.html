@@ -21,12 +21,8 @@
       try {
         document.documentElement.dataset.theme =
           localStorage.getItem("resume-theme") || "light";
-        const savedLayout = localStorage.getItem("resume-layout");
-        document.documentElement.dataset.layout =
-          savedLayout === "classic" ? "pdf" : savedLayout || "modern";
       } catch {
         document.documentElement.dataset.theme = "light";
-        document.documentElement.dataset.layout = "modern";
       }
     </script>
     <link rel="stylesheet" href="resume.css" />
@@ -41,15 +37,6 @@
       <p>Tharuka Chathura · Résumé</p>
       <div class="toolbar-actions">
         <button
-          class="layout-toggle"
-          type="button"
-          aria-label="View PDF résumé"
-          aria-pressed="false"
-          title="View PDF résumé"
-        >
-          <span aria-hidden="true">CV</span>
-        </button>
-        <button
           class="theme-toggle"
           type="button"
           aria-label="Switch to dark theme"
@@ -58,27 +45,17 @@
         >
           <span class="resume-theme-icon" aria-hidden="true">☾</span>
         </button>
-        <a
-          class="download-button"
-          href="assets/Tharuka-Chathura-Resume.pdf"
-          download="Tharuka-Chathura-Resume.pdf"
-          aria-label="Download résumé as PDF"
-          title="Download résumé PDF"
-        >
-          <span class="download-icon" aria-hidden="true">↓</span>
-        </a>
       </div>
     </header>
 
-    <div class="resume-views" id="resume-content">
-    <main class="resume-shell" id="modern-resume">
+    <main class="resume-shell" id="resume-content">
       <header class="resume-hero">
         <div class="resume-monogram" aria-hidden="true">TC</div>
         <div class="hero-copy">
-          <p class="eyebrow">Software engineer · Sydney, Australia</p>
+          <p class="eyebrow">Mobile &amp; AI Engineer · Sydney, Australia</p>
           <h1>THARUKA<br /><span>CHATHURA</span></h1>
           <p class="role">
-            Cross-platform mobile applications <i>+</i> AI-powered systems
+            Production mobile applications <i>+</i> AI-powered healthcare systems
           </p>
         </div>
         <nav class="contact-list" aria-label="Contact links">
@@ -112,14 +89,15 @@
         </div>
         <div class="section-body summary-grid">
           <p class="summary-lead">
-            Software Engineer specialising in cross-platform mobile applications
-            and <em>AI-powered systems.</em>
+            Mobile and AI Engineer with <em>5+ years</em> of software
+            development experience.
           </p>
           <p>
-            Experienced in building scalable healthcare platforms, real-time
-            conversational AI pipelines, and intelligent mobile applications
-            using Kotlin Multiplatform, Android, iOS, RAG, local LLMs, and
-            cloud-native architectures.
+            Specialising in Android, Kotlin Multiplatform, iOS interoperability,
+            and AI-powered healthcare systems. Experienced in BLE and
+            offline-first architectures, real-time voice assistants, RAG
+            pipelines, on-device machine learning, scalable backend services,
+            cloud infrastructure, databases, and web applications.
           </p>
         </div>
       </section>
@@ -131,41 +109,47 @@
         </div>
         <div class="section-body skill-groups">
           <article>
+            <h3>Mobile &amp; architecture</h3>
+            <p>
+              Kotlin Multiplatform · Android SDK · Jetpack Compose · SwiftUI ·
+              Clean Architecture · MVVM · Koin · Dagger Hilt · Room ·
+              WorkManager · BLE · Coroutines · Flow · Offline-first systems
+            </p>
+          </article>
+          <article>
+            <h3>AI &amp; machine learning</h3>
+            <p>
+              RAG · FAISS · Vector databases · Local LLMs · AI agents · OpenAI
+              APIs · Hugging Face Transformers · Model fine-tuning · ONNX ·
+              Quantisation · BERT · Embeddings · Wake word · ASR · STT · TTS
+            </p>
+          </article>
+          <article>
+            <h3>Backend &amp; cloud</h3>
+            <p>
+              NestJS · Spring Boot · PostgreSQL · Redis · Docker Compose · AWS ·
+              Firebase · Hibernate · REST APIs · WebSockets · JWT · Prisma ORM
+            </p>
+          </article>
+          <article>
+            <h3>Web &amp; full-stack</h3>
+            <p>
+              React · Next.js · Angular · RxJS · TypeScript · JavaScript
+            </p>
+          </article>
+          <article>
             <h3>Languages</h3>
-            <p>Kotlin · Swift · Java · Python · TypeScript · JavaScript · C++ · SQL · Dart</p>
-          </article>
-          <article>
-            <h3>Mobile</h3>
             <p>
-              Kotlin Multiplatform · Jetpack Compose · Android SDK · SwiftUI ·
-              Dagger Hilt · Koin · Flow · Coroutines · Retrofit · Room ·
-              WorkManager · Biometrics · Android MDM/EMM · Material Design ·
-              Appium · Espresso · TestNG · Cucumber · Flutter
+              Kotlin · Swift · Java · Python · TypeScript · JavaScript · SQL ·
+              C++ · Dart
             </p>
           </article>
           <article>
-            <h3>AI systems</h3>
+            <h3>Testing &amp; delivery</h3>
             <p>
-              RAG · ONNX · Local LLMs · AI Agents · FAISS · Vector Databases ·
-              Model fine-tuning · Custom inference pipelines · Quantisation ·
-              ASR · STT · TTS
+              Git · CI/CD · JUnit · TestNG · Cucumber BDD · Appium · Espresso ·
+              Selenium · Firebase Crashlytics · Android MDM/EMM
             </p>
-          </article>
-          <article>
-            <h3>Backend & web</h3>
-            <p>
-              Spring Boot · NestJS · PostgreSQL · Redis · Docker Compose ·
-              Hibernate · Angular · React · Next.js · JavaFX · JSP · RxJS ·
-              Selenium · AWS · Firebase Crashlytics · Git
-            </p>
-          </article>
-          <article>
-            <h3>Protocols</h3>
-            <p>REST · APDU · HTTP · WebSocket · MQTT · UART · SPI · I2C · CAN · EMV</p>
-          </article>
-          <article>
-            <h3>Embedded</h3>
-            <p>Arduino · STM32 · NodeMCU · ESP32</p>
           </article>
         </div>
       </section>
@@ -186,43 +170,41 @@
               <h3>Full Stack Engineer</h3>
               <ul>
                 <li>
-                  Developed cross-platform healthcare applications using Kotlin
-                  Multiplatform, Jetpack Compose, and SwiftUI interoperability,
-                  applying Clean Architecture, MVVM, and Koin to support more
-                  than 3,000 patients across Android and iOS.
+                  Built cross-platform Android and iOS healthcare applications
+                  using Kotlin Multiplatform, Jetpack Compose, SwiftUI
+                  interoperability, Clean Architecture, MVVM, and Koin,
+                  supporting 3,000+ existing patients.
                 </li>
                 <li>
-                  Designed the “Bugsy” AI healthcare voice assistant backend
-                  using Docker Compose, PostgreSQL, Redis, FAISS-based RAG, ASR
-                  models, OpenAI APIs, and WebSockets, with an architecture
-                  planned to support more than 10,000 patients.
+                  Developed the Bugsy AI voice-assistant mobile client with
+                  real-time audio streaming, wake word detection, echo
+                  cancellation, TTS, and optimised streaming pipelines to
+                  improve accuracy and reduce latency during live conversations.
                 </li>
                 <li>
-                  Developed a real-time mobile voice client with audio streaming,
-                  voice activity detection, echo cancellation, TTS, and optimised
-                  low-latency pipelines.
+                  Designed and implemented the Bugsy backend using Docker
+                  Compose, PostgreSQL, Redis, FAISS-based RAG pipelines, ASR
+                  models, OpenAI APIs, and WebSockets, delivering low-latency
+                  conversational AI workflows tested to support 10,000+ patients.
                 </li>
                 <li>
-                  Architected BLE and offline-first synchronisation with robust
-                  reconnection and background processing, reducing reconnection
-                  failures by 90% and improving sync reliability by 80% in
-                  internal testing and staging.
+                  Architected BLE communication and offline-first
+                  synchronisation using Kotlin Coroutines, StateFlows,
+                  foreground services, local caching, and persistent storage,
+                  reducing reconnection failures by 90% and improving
+                  synchronisation reliability by 80% in internal testing.
                 </li>
                 <li>
-                  Fine-tuned MobileBERT and DeBERTa models with Hugging Face for
-                  intent classification exceeding 90% recognition accuracy, and
-                  implemented local-LLM action handling and conversational AI
-                  workflows.
+                  Fine-tuned MobileBERT and DeBERTa models with Hugging Face
+                  Transformers for lightweight intent classification, achieving
+                  over 90% recognition accuracy, and implemented local LLM
+                  action handling and prompt-engineering workflows.
                 </li>
                 <li>
-                  Implemented cross-platform permission handling, lifecycle
-                  management, push notifications, biometrics, analytics, and
-                  background execution strategies.
-                </li>
-                <li>
-                  Maintained production mobile applications for 3,000+ active
-                  users, using Crashlytics and production diagnostics to reduce
-                  application crash rates from 20% to 1%.
+                  Maintained production applications serving 3,000+ active
+                  users by analysing Firebase Crashlytics data and resolving
+                  defects, reducing the proportion of users experiencing
+                  crashes from 20% to 1%.
                 </li>
               </ul>
             </div>
@@ -238,43 +220,41 @@
               <h3>Software Engineer</h3>
               <ul>
                 <li>
-                  Applied Clean Architecture, SOLID, multi-module design, MVVM,
-                  reactive programming, and Dagger Hilt to the Android kiosk
-                  application.
+                  Designed and delivered 90% of the Android UI and legacy
+                  XML-to-Jetpack Compose migration, applying Clean Architecture,
+                  SOLID principles, MVVM, multi-module design, reactive
+                  programming, and Dagger Hilt.
                 </li>
                 <li>
-                  Built automatic error detection and recovery for connection,
-                  server, and printer failures, reducing downtime by 90% and
-                  configurator workload by 70%.
+                  Implemented automated error detection and recovery for
+                  connection, server, and printer failures, reducing system
+                  downtime by 90% and configurator workload by 70%.
                 </li>
                 <li>
-                  Implemented QR provisioning and standalone device management
-                  to enable kiosk mode for more than 10,000 Android devices.
+                  Implemented QR-code device provisioning and transitioned from
+                  a Spring Boot service using the Android Management API to a
+                  standalone MDM solution, enabling kiosk mode across 10,000+
+                  Android devices.
                 </li>
                 <li>
-                  Engineered an automated Kotlin testing framework using
-                  Cucumber BDD, JUnit, TestNG, and Appium, reducing QA workload
-                  by 80%.
+                  Engineered an automated test framework using Kotlin, Cucumber
+                  BDD, JUnit, TestNG, and Appium, reducing manual QA workload by
+                  80%.
                 </li>
                 <li>
-                  Integrated printers, assist buttons, and multi-format card
-                  readers supporting contact, contactless, and MSR flows.
+                  Integrated printers, assist buttons, and card readers and
+                  enabled contact, contactless, and magnetic-stripe card
+                  processing for ticket generation.
                 </li>
                 <li>
-                  Designed and developed 90% of a modern Android UI while
-                  migrating legacy XML screens to Jetpack Compose.
+                  Automated CI/CD workflows with deployment scripts that built,
+                  packaged, and deployed artifacts to AWS, improving release
+                  consistency and delivery efficiency.
                 </li>
                 <li>
-                  Automated CI/CD packaging and deployment to AWS servers with
-                  reliable release scripts.
-                </li>
-                <li>
-                  Worked within Agile delivery using Git, JIRA, sprint planning,
-                  and scrum practices.
-                </li>
-                <li>
-                  Delivered maintainable Angular staff-application features
-                  using RxJS, routing, dependency injection, and reactive forms.
+                  Delivered Angular features for staff applications using RxJS,
+                  dependency injection, routing, reactive forms, pipes, and
+                  subscription management.
                 </li>
               </ul>
             </div>
@@ -283,7 +263,7 @@
           <article class="job">
             <div class="job-meta">
               <p class="date">Feb 2020 — Jan 2022</p>
-              <p class="place">Part-time · Global</p>
+              <p class="place">Remote</p>
             </div>
             <div class="job-content">
               <p class="company">Fiverr</p>
@@ -294,12 +274,13 @@
                   global clients using Java, C++, Python, and JavaScript.
                 </li>
                 <li>
-                  Created 20+ IoT solutions and electronic prototypes using
+                  Created 20+ IoT systems and electronic prototypes using
                   Arduino, ESP32, NodeMCU, and STM32 microcontrollers.
                 </li>
                 <li>
-                  Developed 30+ web automation scripts and crawlers with Python,
-                  Java, and Selenium, reducing manual effort by more than 80%.
+                  Developed 30+ web automation scripts and crawlers using
+                  Python, Java, and Selenium, reducing client data-extraction
+                  effort by over 80%.
                 </li>
               </ul>
             </div>
@@ -312,12 +293,12 @@
             </div>
             <div class="job-content">
               <p class="company">Bloomwire</p>
-              <h3>Back-end Developer</h3>
+              <h3>Backend Developer</h3>
               <ul>
                 <li>
-                  Established backend services for the Unecast SMS solution
-                  using Spring Boot, REST APIs, AWS EC2, Lambda, RDS, JWT, SQL,
-                  and Hibernate transaction management.
+                  Built backend services for the Unecast SMS platform using
+                  Spring Boot, REST APIs, Amazon EC2, Lambda, RDS, JWT, SQL,
+                  Hibernate, and transaction management.
                 </li>
               </ul>
             </div>
@@ -333,18 +314,19 @@
         <div class="section-body education-grid">
           <article class="education-primary">
             <p class="date">Aug 2017 — Jul 2022</p>
-            <h3>BS Honours in Engineering</h3>
+            <h3>Bachelor of Science (Honours) in Engineering</h3>
             <p>University of Moratuwa · Sri Lanka</p>
-            <span>Electrical Engineering · Second Class, Upper Division</span>
+            <span>Electrical Engineering · Second Class Upper Division</span>
           </article>
           <div class="course-list">
             <article>
-              <p class="date">Oct 2020 — Apr 2020</p>
+              <p class="date">Apr 2020 — Oct 2020</p>
               <h3>Advanced Business Solution Developer</h3>
               <p>IJSE · Sri Lanka</p>
               <span>
                 Socket Programming, Web Applications, ORM, Hibernate, REST,
-                SPAs, and Document-Oriented Database Management.
+                Single Page Applications, and Document-Oriented Database
+                Management.
               </span>
             </article>
             <article>
@@ -352,8 +334,9 @@
               <h3>Comprehensive Master Java Developer</h3>
               <p>IJSE · Sri Lanka</p>
               <span>
-                OOP, DBMS, Data Structures and Algorithms, Application
-                Architecture, Design Patterns, Threads, and Java Modern UI.
+                Programming Fundamentals, OOP, DBMS, Data Structures and
+                Algorithms, Application Architecture, Design Patterns,
+                Reporting, Regular Expressions, Threads, and Java Modern UI.
               </span>
             </article>
           </div>
@@ -368,30 +351,32 @@
         <div class="section-body project-list">
           <article>
             <span>01</span>
-            <h3>Sadaham Sewana Charity Order Management System</h3>
+            <h3>Sadaham Sewana Charity Order Management Platform</h3>
             <p>
-              Full-stack order and campaign management for coordinating customer
-              orders and charity lunch packet distribution. Built with NestJS,
-              Prisma, PostgreSQL, and Next.js, with JWT authentication, Twilio
-              SMS, rate limiting, Google Drive backups, and Docker deployment.
+              Built an order and campaign management platform for coordinating
+              customer orders and charity lunch-packet distributions using
+              NestJS, Prisma ORM, PostgreSQL, and Next.js. Implemented JWT
+              authentication, Twilio SMS notifications, rate limiting,
+              automated PostgreSQL backups with Google Drive integration, and
+              Docker Compose deployment.
             </p>
           </article>
           <article>
             <span>02</span>
             <h3>Portable Anti-Collision System for Forklifts</h3>
             <p>
-              Forklift safety system using ESP32, time-of-flight sensors, and
-              AWS IoT Core for collision prevention, with real-time safety
-              monitoring through a React dashboard.
+              Built a collision-prevention system using ESP32, Time-of-Flight
+              sensors, and AWS IoT Core, with real-time safety monitoring
+              through a React dashboard.
             </p>
           </article>
           <article>
             <span>03</span>
             <h3>Virtual Career Fair Platform</h3>
             <p>
-              Automated scheduling and interview coordination platform
-              integrating Google Calendar and Google Meet APIs to streamline
-              recruiter-candidate meeting workflows.
+              Developed an automated interview scheduling platform integrating
+              Google Calendar and Google Meet APIs to streamline
+              recruiter-candidate workflows.
             </p>
           </article>
         </div>
@@ -403,18 +388,6 @@
         <a href="index.html">Return to portfolio ↑</a>
       </footer>
     </main>
-
-    <section class="pdf-viewer" aria-label="Tharuka Chathura résumé">
-      <div
-        class="pdf-document"
-        id="pdf-document"
-        data-manifest="assets/resume-pages/pages.json"
-        aria-live="polite"
-      >
-        <p class="pdf-loading">Preparing résumé pages…</p>
-      </div>
-    </section>
-    </div>
     <script src="resume.js"></script>
   </body>
 </html>
